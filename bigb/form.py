@@ -1,5 +1,6 @@
 from django import forms
 from .models import user
+from django.contrib import messages
 
 class RegisterForm(forms.ModelForm):
 	password = forms.CharField(widget= forms.PasswordInput()) 

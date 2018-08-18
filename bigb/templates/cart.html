@@ -9,14 +9,16 @@
 </head>
 <body>
 	<div class="container">
-<h2>TOTAL ITEMS:{{no}}
- <div class="input-group">
- 	TOTAL PRICE:<span style="font-size: 25px" class = "input-group-addon"><strong>₹</strong></span><input style="width:100px" type="number" value="{{sum}}" readonly="true"></div>
-         </h2>
            {% if no == 0 %}
-             <h1>YOUR CaRT IS EMPTY</h1>
-
+              <center><img style="width:700px; height: 400px" src="/static/images/empty.png" /></center>
             {% else %}
+          <div style="font-size: 25px;background-color:#ADFF2F " class="row">
+          	<div class="col-md-6">
+            TOTAL ITEMS:{{no}}</div>
+            <div class="col-md-6">
+   <div class="input-group">
+ 	TOTAL PRICE:<span style="font-size: 25px" class = "input-group-addon"><strong>₹</strong></span><input style="width:100px" type="number" value="{{sum}}" readonly="true"></div></div></div>
+        <hr style="height:1px;border:none;color:#333;background-color:#333;">
             {% for n in i %}
              <div class="row">
         <div class="col-md-5">

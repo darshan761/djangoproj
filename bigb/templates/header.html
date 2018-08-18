@@ -8,8 +8,8 @@
      <script type="text/javascript">
        function getout() {
           var val = confirm("Do you want to logout?");
-        if( val==true){
-          window.location.href={% url 'logout' %};
+        if( val==false){
+          return false;
         }
        };
      </script>
@@ -25,7 +25,7 @@
       <li><a href={% url 'cart' request.session.usid %}><i class="fa fa-shopping-basket"></i> Cart</a></li>
       <li><a href={% url 'personaldet' request.session.usid  %}><i class="fa fa-user-circle"></i> Personal Details</a></li>
       <li><a href={% url 'aboutUs' %}><i class="fa fa-info-circle"></i> About Us</a></li>
-      <li><a  href={% url 'logout' %} ><i class="fa fa-sign-out"></i> Logout</a></li>
+      <li><a onclick="return getout();" href={% url 'logout' %} ><i class="fa fa-sign-out"></i> Logout</a></li>
       <li><a href=# style="float:right" >{{user.name}}</a></li>
     </ul>
   </div>

@@ -17,7 +17,7 @@ def login(request):
 	return render(request, 'login.html',{'form':form,'form1':form1})
 
 def register(request):
-	form = RegisterForm(request.POST)
+	form2 = RegisterForm(request.POST)
 	form1 = LoginForm()
 	form2 = RegisterForm()
 	if form.is_valid():

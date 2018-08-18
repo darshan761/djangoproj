@@ -1,0 +1,205 @@
+{% include "header.html" %}
+<html>
+<head>
+	<title>Home</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+      .col-lg-3:hover ,.col-md-4:hover, .col-xs-6:hover {
+               background: #D3D3D3 ;
+      }
+</style>
+<script>
+	function qtychecker(){
+		if (document.getElementByClassName('form-control').value > 10 && document.getElementByClassName('form-control').value <=0 ){
+			window.alert("Enter Proper Quantity");
+		}
+	};
+</script>
+
+</head>
+<body>
+ <div class="container">
+
+      <div class="row text-center text-lg-left">
+
+        <div class="col-lg-3 col-md-4 col-xs-6"><form action={% url 'addtocart' request.session.usid %} method="POST" >{% csrf_token %}
+            <img  style="width:400px; height: 200px" class="img-fluid img-thumbnail" src="/static/images/tomato.jpg" alt="">
+         
+          <strong><input style="border:white;text-align: center;" name="item_name" type="text" readonly="true" value="Tomato"></strong>
+          <select style="width:210px"name="option">
+              <option value="20">1 Kg-Rs 20.00</option>
+              <option value="12">500 gm-Rs 12.00 </option>
+          </select></br></br>
+          <div class = "input-group">
+             <span class = "input-group-addon">Qty</span>
+             <input style="width:50px" type = "text" name="qty" class ="form-control">
+          <button style="width:120px;float: right" onclick="qtychecker()" type="submit" class="btn btn-warning"><i class="fa fa-shopping-basket"></i> Add</button>
+      </div></form>
+        </div>
+
+
+        <div class="col-lg-3 col-md-4 col-xs-6"><form action={% url 'addtocart' request.session.usid %} method="POST" >{% csrf_token %}
+            <img  style="width:400px; height: 200px" class="img-fluid img-thumbnail" src="/static/images/potato.jpg" alt="">
+            <strong><input style="border:white;text-align: center;" name="item_name" type="text" readonly="true" value="Potato"></strong>
+           <select style="width:210px" name="option">
+              <option value="22">1 Kg-Rs 22.00</option>
+              <option value="13">500 gm-Rs 13.00 </option>
+          </select></br></br>
+          <div class = "input-group">
+             <span class = "input-group-addon">Qty</span>
+             <input style="width:50px" type = "text" name="qty" class =" form-control">
+          <button style="width:120px;float: right" type="submit" class="btn btn-warning"><i class="fa fa-shopping-basket"></i> Add</button>
+            </div></form>
+        </div>
+
+
+        <div class="col-lg-3 col-md-4 col-xs-6"><form action={% url 'addtocart' request.session.usid %} method="POST" >{% csrf_token %}
+         
+            <img style="width:400px; height: 200px" class="img-fluid img-thumbnail" src="/static/images/Cabbage.jpg" alt="">
+            <strong><input style="border:white;text-align: center;" name="item_name" type="text" readonly="true" value="Cabbage"></strong>
+           <select style="width:210px"name="option">
+              <option value="22">1 pc-Rs 22.00</option>
+            
+          </select></br></br>
+          <div class = "input-group">
+             <span class = "input-group-addon">Qty</span>
+             <input style="width:50px" type = "text" name="qty" class = "form-control">
+          <button style="width:120px;float: right" type="submit" class="btn btn-warning"><i class="fa fa-shopping-basket"></i> Add</button>
+      </div></form>
+        </div>
+
+
+        <div class="col-lg-3 col-md-4 col-xs-6"><form action={% url 'addtocart' request.session.usid %} method="POST" >{% csrf_token %}
+         
+            <img  style="width:400px; height: 200px" class="img-fluid img-thumbnail" src="/static/images/cauliflower.jpg" alt="">
+          <strong><input style="border:white;text-align: center;" name="item_name" type="text" readonly="true" value="cauliflower"></strong>
+           <select style="width:210px"name="option">
+              <option value="40">1 Pc-Rs 40.00</option>
+          </select></br></br>
+          <div class = "input-group">
+             <span class = "input-group-addon">Qty</span>
+             <input style="width:50px" type = "text" name="qty" class =" form-control">
+          <button style="width:120px;float: right" type="submit" class="btn btn-warning"><i class="fa fa-shopping-basket"></i> Add</button>
+      </div></form>
+        </div>
+        <div class="col-lg-3 col-md-4 col-xs-6"><form action={% url 'addtocart' request.session.usid %} method="POST" >{% csrf_token %}
+            <img style="width:400px; height: 200px" class="img-fluid img-thumbnail" src="/static/images/Garlic.jpeg" alt="">
+            <strong><input style="border:white;text-align: center;" name="item_name" type="text" readonly="true" value="Garlic"></strong>
+           <select style="width:210px"name="option">
+              <option value="10">100 gm-Rs 10.00</option>
+              <option value="20">250 gm-Rs 20.00 </option>
+              <option value="40">500 gm-Rs 40.00 </option>
+              <option value="75">1 Kg-Rs 75.00 </option>
+          </select></br></br>
+          <div class = "input-group">
+             <span class = "input-group-addon">Qty</span>
+             <input style="width:50px" type = "text" name="qty" class =" form-control">
+          <button style="width:120px;float: right" type="submit" class="btn btn-warning"><i class="fa fa-shopping-basket"></i> Add</button>
+      </div></form>
+        </div>
+        <div class="col-lg-3 col-md-4 col-xs-6"><form action={% url 'addtocart' request.session.usid %} method="POST" >{% csrf_token %}
+            <img style="width:400px; height: 200px" class="img-fluid img-thumbnail" src="/static/images/onion.jpg" alt="">
+             <strong><input style="border:white;text-align: center;" name="item_name" type="text" readonly="true" value="Onion"></strong>
+           <select style="width:210px"name="option">
+              <option value="20">1 Kg-Rs 20.00</option>
+              <option value="100">5 Kg-Rs 100.00 </option>
+          </select></br></br>
+          <div class = "input-group">
+             <span class = "input-group-addon">Qty</span>
+             <input style="width:50px" type = "text" name="qty" class =" form-control">
+          <button style="width:120px;float: right" type="submit" class="btn btn-warning"><i class="fa fa-shopping-basket"></i> Add</button>
+      </div><form action="" method="POST" >
+        </div>
+        <div class="col-lg-3 col-md-4 col-xs-6"><form action={% url 'addtocart' request.session.usid %} method="POST" >{% csrf_token %}
+            <img style="width:400px; height: 200px" class="img-fluid img-thumbnail" src="/static/images/Coriander.jpg" alt="">
+           <strong><input style="border:white;text-align: center;" name="item_name" type="text" readonly="true" value="Coriander"></strong>
+           <select style="width:210px"name="option">
+              <option value="6">100 gm-Rs 6.00</option>
+              <option value="12">250 gm-Rs 12.00 </option>
+              <option value="24">500 gm-Rs 24.00 </option>
+              <option value="40">1 Kg-Rs 40.00 </option>
+          </select></br></br>
+          <div class = "input-group">
+             <span class = "input-group-addon">Qty</span>
+             <input style="width:50px" type = "text" name="qty" class =" form-control">
+          <button style="width:120px;float: right" type="submit" class="btn btn-warning"><i class="fa fa-shopping-basket"></i> Add</button>
+        </div></form>
+    </div>
+         <div class="col-lg-3 col-md-4 col-xs-6"><form action={% url 'addtocart' request.session.usid %} method="POST" >{% csrf_token %}
+            <img style="width:400px; height: 200px" class="img-fluid img-thumbnail" src="/static/images/lemon.jpg" alt="">
+            <strong><input style="border:white;text-align: center;" name="item_name" type="text" readonly="true" value="Lemon"></strong>
+           <select style="width:210px"name="option">
+           	  <option value="10">100 gm-Rs 10.00</option>
+              <option value="15">250 gm-Rs 15.00</option>
+              <option value="35">500 gm-Rs 35.00 </option>
+              <option value="40">1 Kg-Rs 40.00</option>
+          </select></br></br>
+          <div class = "input-group">
+             <span class = "input-group-addon">Qty</span>
+             <input style="width:50px" type = "text" name="qty" class =" form-control">
+          <button style="width:120px;float: right" type="submit" class="btn btn-warning"><i class="fa fa-shopping-basket"></i> Add</button>
+        </div></form>
+    </div>
+        <div class="col-lg-3 col-md-4 col-xs-6"><form action={% url 'addtocart' request.session.usid %} method="POST" >{% csrf_token %}
+          
+            <img style="width:400px; height: 200px" class="img-fluid img-thumbnail" src="/static/images/apples.jpg" alt="">
+        <strong><input style="border:white;text-align: center;" name="item_name" type="text" readonly="true" value="Apple"></strong>
+           <select style="width:210px"name="option">
+              <option value="259">6 Pc-Rs 259.00</option>
+              <option value="169">4 Pc-Rs 169.00 </option>
+          </select></br></br>
+          <div class = "input-group">
+             <span class = "input-group-addon">Qty</span>
+             <input style="width:50px" type = "text" name="qty" class =" form-control">
+          <button style="width:120px;float: right" type="submit" class="btn btn-warning"><i class="fa fa-shopping-basket"></i> Add</button>
+        </div></form>
+    </div>
+        <div class="col-lg-3 col-md-4 col-xs-6"><form action={% url 'addtocart' request.session.usid %} method="POST" >{% csrf_token %}
+         
+            <img style="width:400px; height: 200px" class="img-fluid img-thumbnail" src="/static/images/orange.jpg" alt="">
+         <strong><input style="border:white;text-align: center;" name="item_name" type="text" readonly="true" value="Orange"></strong>
+           <select style="width:210px"name="option">
+              <option value="115">4 Pc-Rs 115</option>
+              <option value="150">6 Pc-Rs 150 </option>
+          </select></br></br>
+          <div class = "input-group">
+             <span class = "input-group-addon">Qty</span>
+             <input style="width:50px" type = "text" name="qty" class =" form-control">
+          <button style="width:120px;float: right" type="submit" class="btn btn-warning"><i class="fa fa-shopping-basket"></i> Add</button>
+        </div></form></div>
+        <div class="col-lg-3 col-md-4 col-xs-6"><form action={% url 'addtocart' request.session.usid %} method="POST" >{% csrf_token %}
+         
+            <img style="width:400px; height: 200px" class="img-fluid img-thumbnail" src="/static/images/banana.jpg" alt="">
+         <strong><input style="border:white;text-align: center;" name="item_name" type="text" readonly="true" value="Banana"></strong>
+           <select style="width:210px"name="option">
+              <option value="28">1 Kg-Rs 28.00</option>
+              <option value="10">500 gm-Rs 10.00 </option>
+          </select></br></br>
+          <div class = "input-group">
+             <span class = "input-group-addon">Qty</span>
+             <input style="width:50px" type = "text" name="qty" class =" form-control">
+          <button style="width:120px;float: right" type="submit" class="btn btn-warning"><i class="fa fa-shopping-basket"></i> Add</button>
+        </div></form></div>
+        <div class="col-lg-3 col-md-4 col-xs-6"><form action={% url 'addtocart' request.session.usid %} method="POST" >{% csrf_token %}
+          
+            <img style="width:400px; height: 200px" class="img-fluid img-thumbnail" src="/static/images/pomegranate.gif" alt="">
+       <strong><input style="border:white;text-align: center;" name="item_name" type="text" readonly="true" value="Pomegranate"></strong>
+           <select style="width:210px"name="option">
+              <option value="59">2 Pc-Rs 59.00</option>
+              <option value="69">4 Pc-Rs 69.00 </option>
+              <option value="99">6 Pc-Rs 99.00</option>
+          </select></br></br>
+          <div class = "input-group">
+             <span class = "input-group-addon">Qty</span>
+             <input style="width:50px" type = "text" name="qty" class =" form-control">
+          <button style="width:120px;float: right" type="submit" class="btn btn-warning"><i class="fa fa-shopping-basket"></i> Add</button>
+        </div></form></div>
+      </div>
+
+    </div>
+</body>
+</html>

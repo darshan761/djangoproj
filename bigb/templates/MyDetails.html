@@ -1,0 +1,96 @@
+{%include 'header.html'%}
+<html>
+<head>
+	 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+	function edit() {
+    document.getElementById('name').readOnly = false;
+    document.getElementById('username').readOnly = false;
+    document.getElementById('password').readOnly = false;
+    document.getElementById('address').readOnly = false;
+    document.getElementById('mobile_no').readOnly = false;
+};
+    function save() {
+        document.getElementById('name').readOnly = true;
+        document.getElementById('username').readOnly = true;
+        document.getElementById('password').readOnly = true;
+        document.getElementById('address').readOnly = true;
+        document.getElementById('mobile_no').readOnly = true;
+    };
+
+	</script>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-9">
+		    <div class="card">
+		        <div class="card-body">
+		            <div class="row">
+		                <div class="col-md-12">
+		                    <h4>Your Profile</h4>
+		                    <hr>
+		                </div>
+		            </div>
+		            <div class="row">
+		                <div class="col-md-12">
+		                    <form action={% url 'update' %} method="POST">{% csrf_token %}
+                              <div class="form-group row">
+                                 <label class="col-4 col-form-label" >ID:</label> 
+                                <div class="col-8">
+                                  <input name = "id" type="number" class="form-control here" value="{{user.id}}" readonly="true"/>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                 <label class="col-4 col-form-label" >Name:</label>
+                                <div class="col-8">
+                                   <input name = "name" id ="name" type="text" class="form-control here" value="{{user.name}}" readonly="true" />
+                                </div>
+                              </div>
+                              
+                              <div class="form-group row">
+                                 <label class="col-4 col-form-label" >Username:</label>
+                                <div class="col-8">
+                                   <input name = "username" id="username"  type="text" class="form-control here" value="{{user.username}}" readonly="true" />
+                                </div>
+                              </div>
+
+                                 <div class="form-group row">
+                                 <label class="col-4 col-form-label" >Password:</label>
+                                <div class="col-8">
+                                  <input  name ="password" id="password" type="text" class="form-control here" value="{{user.password}}" readonly="true" />
+                                </div>
+                              </div>
+
+                              <div class="form-group row">
+                                 <label class="col-4 col-form-label" >Address:</label>
+                                <div class="col-8">
+                                   <input name="address" id="address" type="text" class="form-control here" value="{{user.address}}" readonly="true" />
+                                </div>
+                              </div>
+                              
+                              <div class="form-group row">
+                                 <label class="col-4 col-form-label" >Mobile No:</label>
+                                <div class="col-8">
+                                  <input name = "mobile" id = "mobile_no" type="number" class="form-control here" value="{{user.mobile_no}}" readonly="true" />
+                                </div>
+                              </div>
+
+
+                              <div class="form-group row">
+                                <div class="offset-4 col-8">
+                                  <input  type="button" onclick="edit()" class="btn btn-primary" value="Edit"/>
+                                  <input  type="submit" onclick="save()" class="btn btn-primary" value="save"/>  
+                                </div>
+                              </div>
+                            </form>
+		                </div>
+		            </div>
+		            
+		        </div>
+		    </div>
+		</body>
+		</html>

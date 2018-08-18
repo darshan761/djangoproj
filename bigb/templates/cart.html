@@ -1,0 +1,46 @@
+{%include "header.html" %}
+<html>
+<head>
+	 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="container">
+<h2>TOTAL ITEMS:{{no}}
+ <div class="input-group">
+ 	TOTAL PRICE:<span style="font-size: 25px" class = "input-group-addon"><strong>₹</strong></span><input style="width:100px" type="number" value="{{sum}}" readonly="true"></div>
+         </h2>
+           {% if no == 0 %}
+             <h1>YOUR CaRT IS EMPTY</h1>
+
+            {% else %}
+            {% for n in i %}
+             <div class="row">
+        <div class="col-md-5">
+          {% for mykey,myvalue in d.items %}
+             {% if  mykey  == n.name %}
+                  <img style="width:400px; height: 200px" class="img-fluid img-thumbnail" src="/static/images/{{myvalue}}" />
+                {% endif %}
+                {% endfor %}
+        </div>
+        <div style="background-color:#D3D3D3 " class="col-md-7">{% load mathfilters %}
+          <h3>{{n.name}}</h3>
+            <p>Item Id:{{n.id}}</p>
+            <p>Price:{{n.price}}</p>
+            <p>Qty:{{n.qty}}</p>
+            <p>Net Price:<strong>₹</strong>{{ n.price|mul:n.qty }}</p>
+            <button  onclick="window.location.href='{% url 'removefromcart' n.id %}'" class="btn btn-primary" ><i class="fa fa-trash"></i> Remove</button>
+        </div>
+      </div>
+      
+
+      <hr style="height:1px;border:none;color:#333;background-color:#333;">
+      {% endfor %}
+      {% endif %}
+  </div>
+</body>
+</html>
+

@@ -17,12 +17,12 @@ def login(request):
 	return render(request, 'login.html',{'form':form,'form1':form1})
 
 def register(request):
-	form2 = RegisterForm(request.POST)
+	form = RegisterForm(request.POST)
 	form1 = LoginForm()
 	form2 = RegisterForm()
 	if form.is_valid():
 		form.save()
-	return HttpResponseRedirect('/bigb/#toregister')
+	return HttpResponseRedirect('/bigb/#tologin')
 
 def home(request):
 	if request.method=='POST':

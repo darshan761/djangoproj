@@ -121,7 +121,7 @@
              <span class = "input-group-addon">Qty</span>
              <input style="width:50px" type = "text" name="qty" value = "1" class =" form-control">
           <button style="width:120px;float: right" type="submit" class="btn btn-warning"><i class="fa fa-shopping-basket"></i> Add</button>
-      </div><form action="" method="POST" >
+      </div></form  >
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6"><form action={% url 'addtocart' request.session.usid %} method="POST" >{% csrf_token %}
             <img style="width:400px; height: 200px" class="img-fluid img-thumbnail" src="/static/images/Coriander.jpg" alt="">
